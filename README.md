@@ -1,1 +1,30 @@
-# informace
+# Základy teorie informace
+
+- abstraktni pojem, neco co se da uchovavat a šířit
+- abychom ji ale mohli sdilet a uchovavat a treba i cist tak tu informaci musime nejak zakodovat. Kodovanim se mysli treba to, ze prirozeny cislo prevedes do binarni soustavy a uchovas v pocitaci jako jednicky a nuly.
+- Opacny pohled je, ze pocitac umi pracovat jen s binarni soustavou a i pres to umi nejakym zpusobem zachytit koncepty mimo binární soustavu, jako je obrázek, akce zmáčknutí myši, postava v počítačové hře...
+- Pro hlubší pochopení se podívejme na nějaký **příklady kódování**
+	- **Přirozená čísla** v počítači
+		- nejjednodušší příklad, prostě je převedeme do binární soustavy a uchováme v počítači jako nuly a jedničky
+			- Jde o to, že jsme něco matematickýho, nějakou informaci, převedli do řeči počítače aka zakódovali
+	- **Písmena ASCII**			
+		- správně se jim neříká písmena, ale spíš charaktery, protože celý ASCII neobsahuje jenom písmena ale to je detail
+		- Jak zadat do počítače písmeno když počítač zná jen jedničky a nuly? Jednoduše! Prostě si někdo v minulosti vymezil na jedno písmeno 1 Byte (8 bitů). 
+		- V jednom bytu se dá uchovat určitej počet informací, souvisí to s kombinatorikou, třeba přes kombinatorický pravidlo součinu máš 8 pozic a na každý můžou bejt 2 číslice, to je celkem 2^8 různejch možností, celkem 256.
+		- A lidi si v minulym století prostě řekli, že 00000000=a, 00000001=b, 00000010=c, 00000011=d, ...
+		- Je to fakt jen o tom, že si o nějaký sekvenci nul a jedniček řekneš že něco znamenaj.
+		- V tom je taky jedinej zádrhel kódování. sekvence 01001011 může znamenat 15 když o tom přemýšlíš jako o přirozenym číslu, může to znamenat písmeno 'ů' v kódování ASCII a může to bejt třeba pixel, cokoliv
+		- Je teda důležitý, abys s danou zakódovanou informací měl i znalost jak je zakódovaná, nebo "co je v ní schovaný"
+	- **Písmena UNICODE**
+		- další kódování písmen, o něco složitější ale je v něm víc znaků, třeba čínský blbosti a emoji
+		- funguje jako nadstavba pro ASCII, ale to je detail
+		- konkrétní tabulku ASCII/UNICODE najdes treba [tady](https://web.alfredstate.edu/faculty/weimandn/miscellaneous/ascii/ascii_index.html), ty priklady co jsem daval byly samozrejme jen ilustrativni a jsou blbe
+	- **Obrázky zjednodušeně**
+		- s celym obrázkem je to složitější, ale naučim tě jeden ze způsobů jak zakódovat pixel, obrázek pak bude víc pixelů
+		- barevnej RGB pixel (se budes ucit s tatou) se da reprezentovat trojicí čísel (Red, Green, Blue). 
+		- Přirozený čísla už umíme kódovat, a tedy pixel budou prostě 3 binární čísla za sebou, tedy šedej pixel bude 000001110000011100000111 třeba
+	- vyjadřovali jsme všechno v binární soustavě, ale samozřejmě je to teoreticky možný v každý soustavě a nebo jakýkoliv jiný blbosti. Klíčem je to, že něčemu "přiřadíš takhle význam"
+- **Jednotky**
+	- základní jednotka je bit. Bit jo logická hodnota True/False 1/0. Tak jak jste se učili v matice ve výrokový logice
+	- spoustukrát se to hodí, ale na spoustu věcí je to malá jednotka, třeba na písmeno ASCII máš 8 bitů. Proto se rozhodlo, že bude i jednotka Byte, kde 1 Byte = 8 bitů
+	- Byty i bity se značí B a b/bit a normálně se k nim dávaj předpony GB, Mbit kde se postupuje po 1024 násobku
